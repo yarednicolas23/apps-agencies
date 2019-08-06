@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,WebView,StatusBar} from 'react-native';
+import {Platform, StyleSheet, Text, View,WebView,StatusBar,Modal,ActivityIndicator,Image} from 'react-native';
 import { SafeAreaView, } from 'react-navigation';
 
 const instructions = Platform.select({
@@ -19,6 +19,12 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  constructor(props){
+    super(props)
+    this.state = {
+      visible:true
+    }
+  }
   render() {
     return (
       <SafeAreaView style={{flex: 1, backgroundColor: '#00c4ff'}}>
@@ -27,8 +33,19 @@ export default class App extends Component<Props> {
             backgroundColor="#00c4ff"
           />
         <WebView
-            source={{uri: 'https://viajesrutassa.com'}}
-          />
+        source={{uri: 'https://viajesrutassa.com'}}
+        onLoad={()=>this.setState({visible:false})}
+        onLoadStart={()=>this.setState({visible:true})}/>
+        <Modal
+          animationType="fade"
+          transparent={true}
+          visible={this.state.visible}>
+          <View style={[styles.container,styles.horizontal]}>
+            <Image source={require('./src/assets/icon.png')} style={styles.image}/>
+            <ActivityIndicator size="small" color="grey" style={styles.loader}/>
+          </View>
+        </Modal>
+
       </SafeAreaView>
     );
   }
@@ -39,16 +56,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: "rgba(255,255,255,0.5)"
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  horizontal: {
+    flexDirection:'column',
+    justifyContent:'space-around',
+    padding:10
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  image:{
+    width:'100%',
+    height:'40%',
+    resizeMode:'contain'
+  }
 });
