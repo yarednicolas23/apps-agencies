@@ -3,7 +3,8 @@
 * https://github.com/yarednicolas23/apps-agencies/
 * Description. Update to react native of prohect mobile.aviatur.com
 * @author yarednicolas23
-*/
+ */
+
 
 import {AppRegistry} from 'react-native';
 import App from './App';
