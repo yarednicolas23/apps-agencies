@@ -17,6 +17,7 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* aviaturMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* aviaturMobileTests.m */; };
+		34D03D1B230C30C30034CDE0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34D03D1A230C30C30034CDE0 /* GoogleService-Info.plist */; };
 		A9710025B072A636C93566A3 /* libPods-aviaturMobile-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAD4C082430EBF199E3029C /* libPods-aviaturMobile-tvOSTests.a */; };
 		C88F609B479A5EC7B4318BDE /* libPods-aviaturMobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 810C161E22461C1A91426F5D /* libPods-aviaturMobileTests.a */; };
 		D77E09311CD5E85B268E98F1 /* libPods-aviaturMobile-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E42D4557C26D19AD66B4F871 /* libPods-aviaturMobile-tvOS.a */; };
@@ -37,6 +38,13 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "aviaturMobile-tvOS";
 		};
+		34D03D22230CAAAF0034CDE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34D03D1E230CAAAE0034CDE0 /* RNFirebase.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNFirebase;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +61,9 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = aviaturMobile/main.m; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* aviaturMobile-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aviaturMobile-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* aviaturMobile-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "aviaturMobile-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34D03D1923074BD00034CDE0 /* aviaturMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = aviaturMobile.entitlements; path = aviaturMobile/aviaturMobile.entitlements; sourceTree = "<group>"; };
+		34D03D1A230C30C30034CDE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Documents/Google PLIST/aviaturMobile/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		34D03D1E230CAAAE0034CDE0 /* RNFirebase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFirebase.xcodeproj; path = "../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj"; sourceTree = "<group>"; };
 		36D094CA29B61EC2A6493474 /* Pods-aviaturMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aviaturMobileTests.release.xcconfig"; path = "Target Support Files/Pods-aviaturMobileTests/Pods-aviaturMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DAEC2CA4C9C0DD9F69A9A1D /* Pods-aviaturMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aviaturMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-aviaturMobileTests/Pods-aviaturMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		810C161E22461C1A91426F5D /* libPods-aviaturMobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-aviaturMobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +136,8 @@
 		13B07FAE1A68108700A75B9A /* aviaturMobile */ = {
 			isa = PBXGroup;
 			children = (
+				34D03D1A230C30C30034CDE0 /* GoogleService-Info.plist */,
+				34D03D1923074BD00034CDE0 /* aviaturMobile.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -149,9 +162,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		34D03D1F230CAAAE0034CDE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34D03D23230CAAAF0034CDE0 /* libRNFirebase.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				34D03D1E230CAAAE0034CDE0 /* RNFirebase.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -285,7 +307,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = Facebook;
+				ORGANIZATIONNAME = AVIATUR;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
@@ -294,6 +316,18 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = A2U5FLSM7P;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -318,6 +352,12 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 34D03D1F230CAAAE0034CDE0 /* Products */;
+					ProjectRef = 34D03D1E230CAAAE0034CDE0 /* RNFirebase.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* aviaturMobile */,
@@ -327,6 +367,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		34D03D23230CAAAF0034CDE0 /* libRNFirebase.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFirebase.a;
+			remoteRef = 34D03D22230CAAAF0034CDE0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00E356EC1AD99517003FC87E /* Resources */ = {
@@ -341,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				34D03D1B230C30C30034CDE0 /* GoogleService-Info.plist in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,6 +683,10 @@
 			baseConfigurationReference = 9405E1D8A8ED3E09D854555A /* Pods-aviaturMobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = aviaturMobile/aviaturMobile.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = A2U5FLSM7P;
@@ -642,8 +697,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = travel.aviatur.aviaturMobile;
 				PRODUCT_NAME = aviaturMobile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -653,6 +710,10 @@
 			baseConfigurationReference = F87E1A6DBFF18B458A42E297 /* Pods-aviaturMobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = aviaturMobile/aviaturMobile.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A2U5FLSM7P;
 				INFOPLIST_FILE = aviaturMobile/Info.plist;
@@ -662,8 +723,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = travel.aviatur.aviaturMobile;
 				PRODUCT_NAME = aviaturMobile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

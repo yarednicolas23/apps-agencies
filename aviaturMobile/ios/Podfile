@@ -28,6 +28,10 @@ target 'aviaturMobile' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   pod 'react-native-webview', :path => '../node_modules/react-native-webview'
+  
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 
   target 'aviaturMobileTests' do
     inherit! :search_paths
