@@ -1,8 +1,8 @@
 /**
- * Metro configuration for React Native
- * https://github.com/facebook/react-native
+ * Metro configuration for AVIATUR mobile
+ * https://github.com/yarednicolas23/apps-agencies
  *
- * @format
+ * @author yarednicolas23
  */
 
 module.exports = {

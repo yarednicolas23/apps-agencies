@@ -28,44 +28,36 @@ export default class App extends Component<Props> {
   constructor(props){
     super(props)
     this.state = {
+      url:'https://mobile.aviatur.com',
+      urlnotification:'https://mobile.aviatur.com',
+      scripts:"",
       visible:true
     }
-
+    fetch('https://firebasestorage.googleapis.com/v0/b/whitemark-54535.appspot.com/o/mobile.json?alt=media')
+    .then((response) => response.json().then((r) =>{
+      console.log(r)
+      this.setState({scripts:r.css.url+'?'})
+      if (r.aviatur!=null) {
+        this.setState({url:r.aviatur.url})
+      }
+    }))
+    .then()
+    .catch((error) => {
+      console.error(error);
+    })
 
     firebase.messaging().getToken()
     .then(fcmToken => {
+       //console.log(fcmToken);
       if (fcmToken) {
         // user has a device token
       } else {
         // user doesn't have a device token yet
       }
     })
-    firebase.messaging().hasPermission()
-    .then(enabled => {
-      if (enabled) {
-        // user has permissions
-      } else {
-        // user doesn't have permission
-      }
-    })
-    firebase.messaging().requestPermission()
-    .then(() => {
-      // User has authorised
-    })
     .catch(error => {
       // User has rejected permissions
     })
-
-        const notification = new firebase.notifications.Notification()
-        .setNotificationId('notificationId')
-        .setTitle('My notification title')
-        .setBody('My notification body')
-        .setData({
-          key1: 'value1',
-          key2: 'value2',
-        })
-        notification.ios.setBadge(2);
-        firebase.notifications().displayNotification(notification)
   }
   componentDidMount = async () => {
     const enabled = await firebase.messaging().hasPermission();
@@ -78,7 +70,7 @@ export default class App extends Component<Props> {
             // User has authorised
         } catch (error) {
             // User has rejected permissions
-            alert('No permission for notification');
+            //alert('No permission for notification');
         }
     }
 
@@ -90,18 +82,10 @@ export default class App extends Component<Props> {
         // Get information about the notification that was opened
         const notification: Notification = notificationOpen.notification;
         if (notification.body!==undefined) {
-            alert(notification.body);
+            console.log(notification)
+            alert(notification);
         } else {
-            var seen = [];
-            alert(JSON.stringify(notification.data, function(key, val) {
-                if (val != null && typeof val == "object") {
-                    if (seen.indexOf(val) >= 0) {
-                        return;
-                    }
-                    seen.push(val);
-                }
-                return val;
-            }));
+            console.log(notification)
         }
         firebase.notifications().removeDeliveredNotification(notification.notificationId);
     }
@@ -126,36 +110,39 @@ export default class App extends Component<Props> {
         // Get information about the notification that was opened
         const notification: Notification = notificationOpen.notification;
         if (notification.body!==undefined) {
-            alert(notification.body);
+          console.log(notification)
+          //alert(notification.body)
+          this.setState({url:this.state.urlnotification + notification.data['google.c.a.c_l']})
+          console.log(this.state);
         } else {
-            var seen = [];
-            alert(JSON.stringify(notification.data, function(key, val) {
-                if (val != null && typeof val == "object") {
-                    if (seen.indexOf(val) >= 0) {
-                        return;
-                    }
-                    seen.push(val);
-                }
-                return val;
-            }));
+          console.log(notification);
         }
         firebase.notifications().removeDeliveredNotification(notification.notificationId);
     });
 }
-
   componentWillUnmount() {
       this.notificationDisplayedListener();
       this.notificationListener();
       this.notificationOpenedListener();
+  }
+  injectedScripts(){
+    return("var style= document.createElement('link');"+
+    "style.href ='"+this.state.scripts+"';"+
+    "style.type='text/css';"+
+    "style.rel='stylesheet';"+
+    "document.getElementsByTagName('head')[0].append(style);")
   }
   render(){
     return (
       <SafeAreaView style={styles.safeareaview}>
         <StatusBar barStyle="light-content" translucent={true}/>
         <WebView
-          source={{uri: 'http://mobile.aviatur.com'}}
+          source={{uri: this.state.url}}
           onLoad={()=>this.setState({visible:false})}
-          onLoadStart={()=>this.setState({visible:true})}/>
+          onLoadStart={()=>this.setState({visible:true})}
+
+          injectedJavaScript={this.injectedScripts()}
+          />
           <Modal
             animationType="fade"
             transparent={true}

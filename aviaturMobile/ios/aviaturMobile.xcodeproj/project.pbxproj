@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* aviaturMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* aviaturMobileTests.m */; };
 		01DAF89BC3A719D399F7DB37 /* libPods-aviaturMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C83D38CB85EA03518D44081A /* libPods-aviaturMobile.a */; };
@@ -38,13 +37,6 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "aviaturMobile-tvOS";
 		};
-		34D03D22230CAAAF0034CDE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 34D03D1E230CAAAE0034CDE0 /* RNFirebase.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 134814201AA4EA6300B7C361;
-			remoteInfo = RNFirebase;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +55,6 @@
 		2D02E4901E0B4A5D006451C7 /* aviaturMobile-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "aviaturMobile-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D03D1923074BD00034CDE0 /* aviaturMobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = aviaturMobile.entitlements; path = aviaturMobile/aviaturMobile.entitlements; sourceTree = "<group>"; };
 		34D03D1A230C30C30034CDE0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Documents/Google PLIST/aviaturMobile/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		34D03D1E230CAAAE0034CDE0 /* RNFirebase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFirebase.xcodeproj; path = "../node_modules/react-native-firebase/ios/RNFirebase.xcodeproj"; sourceTree = "<group>"; };
 		36D094CA29B61EC2A6493474 /* Pods-aviaturMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aviaturMobileTests.release.xcconfig"; path = "Target Support Files/Pods-aviaturMobileTests/Pods-aviaturMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		7DAEC2CA4C9C0DD9F69A9A1D /* Pods-aviaturMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aviaturMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-aviaturMobileTests/Pods-aviaturMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		810C161E22461C1A91426F5D /* libPods-aviaturMobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-aviaturMobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,18 +153,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		34D03D1F230CAAAE0034CDE0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				34D03D23230CAAAF0034CDE0 /* libRNFirebase.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				34D03D1E230CAAAE0034CDE0 /* RNFirebase.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -306,7 +288,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = AVIATUR;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -353,10 +335,6 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
-				{
-					ProductGroup = 34D03D1F230CAAAE0034CDE0 /* Products */;
-					ProjectRef = 34D03D1E230CAAAE0034CDE0 /* RNFirebase.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -369,13 +347,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		34D03D23230CAAAF0034CDE0 /* libRNFirebase.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRNFirebase.a;
-			remoteRef = 34D03D22230CAAAF0034CDE0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -654,6 +625,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aviaturMobile.app/aviaturMobile";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -675,6 +649,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aviaturMobile.app/aviaturMobile";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
@@ -702,6 +679,9 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -728,6 +708,9 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
@@ -756,6 +739,9 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -784,6 +770,9 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
@@ -811,6 +800,9 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aviaturMobile-tvOS.app/aviaturMobile-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -838,6 +830,9 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/aviaturMobile-tvOS.app/aviaturMobile-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
