@@ -35,7 +35,6 @@ export default class App extends Component<Props> {
     }
     fetch('https://firebasestorage.googleapis.com/v0/b/whitemark-54535.appspot.com/o/mobile.json?alt=media')
     .then((response) => response.json().then((r) =>{
-      console.log(r)
       this.setState({scripts:r.css.url+'?'})
       if (r.aviatur!=null) {
         this.setState({url:r.aviatur.url})
@@ -43,7 +42,8 @@ export default class App extends Component<Props> {
     }))
     .then()
     .catch((error) => {
-      console.error(error);
+      this.setState({scripts:'https://imgsapi.000webhostapp.com/img/mobile.css?'})
+      //console.log(error)
     })
 
     firebase.messaging().getToken()
@@ -82,10 +82,10 @@ export default class App extends Component<Props> {
         // Get information about the notification that was opened
         const notification: Notification = notificationOpen.notification;
         if (notification.body!==undefined) {
-            console.log(notification)
+            //console.log(notification)
             alert(notification);
         } else {
-            console.log(notification)
+            //console.log(notification)
         }
         firebase.notifications().removeDeliveredNotification(notification.notificationId);
     }
@@ -110,12 +110,12 @@ export default class App extends Component<Props> {
         // Get information about the notification that was opened
         const notification: Notification = notificationOpen.notification;
         if (notification.body!==undefined) {
-          console.log(notification)
+          //console.log(notification)
           //alert(notification.body)
           this.setState({url:this.state.urlnotification + notification.data['google.c.a.c_l']})
-          console.log(this.state);
+          //console.log(this.state);
         } else {
-          console.log(notification);
+          //console.log(notification);
         }
         firebase.notifications().removeDeliveredNotification(notification.notificationId);
     });
@@ -140,7 +140,6 @@ export default class App extends Component<Props> {
           source={{uri: this.state.url}}
           onLoad={()=>this.setState({visible:false})}
           onLoadStart={()=>this.setState({visible:true})}
-
           injectedJavaScript={this.injectedScripts()}
           />
           <Modal
