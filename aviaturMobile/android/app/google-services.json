@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "813548225393",
+    "firebase_url": "https://aviaturapp-82d62.firebaseio.com",
+    "project_id": "aviaturapp-82d62",
+    "storage_bucket": "aviaturapp-82d62.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813548225393:android:b9d0d38e02e95a4492acd0",
+        "android_client_info": {
+          "package_name": "com.app.aviatur"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "813548225393-a2eguosntl0goc2o969f65i6t9fgsjg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtyqWhePu6-TM2x_tjzc9u2pzOAT6xfko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "813548225393-a2eguosntl0goc2o969f65i6t9fgsjg3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "813548225393-nb9l2r9jl6o3seai7a3kurvhqtf4d0g5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "travel.aviatur.aviaturMobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

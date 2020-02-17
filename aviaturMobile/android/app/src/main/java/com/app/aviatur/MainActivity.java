@@ -1,4 +1,4 @@
-package com.aviaturmobile;
+package com.aviatur;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "aviaturMobile";
+        return "AVIATUR";
     }
 }
